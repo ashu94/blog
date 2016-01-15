@@ -21,7 +21,7 @@ BLOG_AUTHOR = "ashu"  # (translatable)
 BLOG_TITLE = "cozitsphysics"  # (translatable)
 # This is the main URL for your site. It will be used
 # in a prominent link. Don't forget the protocol (http/https)!
-SITE_URL = "https://example.com/"
+SITE_URL = "www.sdf.com"
 # This is the URL where Nikola's output will be deployed.
 # If not set, defaults to SITE_URL
 # BASE_URL = "https://example.com/"
@@ -169,6 +169,7 @@ THEME_COLOR = '#5670d4'
 POSTS = (
     ("posts/*.rst", "posts", "post.tmpl"),
     ("posts/*.txt", "posts", "post.tmpl"),
+    ("posts/*.md", "posts", "post.tmpl"),
 )
 PAGES = (
     ("stories/*.rst", "stories", "story.tmpl"),
@@ -1138,9 +1139,38 @@ USE_BUNDLES = True
 
 # Put in global_context things you want available on all your templates.
 # It can be anything, data, functions, modules, etc.
-GLOBAL_CONTEXT = {}
+GLOBAL_CONTEXT = {"social_links": [
+    {
+        'bgcolor': "#F44336",
+        'icon': "<i class='fa fa-share-square-o'></i>"
+    },
+    {
+        "url": "https://twitter.com/",
+        "bgcolor": "#55ACEE",
+        "color": "#fffff",
+        "icon": "<i class='fa fa-twitter'></i>",
+        "target": "_blank"
+    },
+    {
+        "url": "https://github.com/",
+        "bgcolor": "#666666",
+        "color": "#fffff",
+        "icon": "<i class='fa fa-github-square'></i>",
+        "target": "_blank"
+    },
+    {
+        "url": "https://www.facebook.com",
+        "bgcolor": "#3B5998",
+        "color": "#fffff",
+        "icon": "<i class='fa fa-facebook'></i>",
+        "target": "_blank"
+    },
+    ]
+    
+}
 
 # Add functions here and they will be called with template
 # GLOBAL_CONTEXT as parameter when the template is about to be
 # rendered
 GLOBAL_CONTEXT_FILLER = []
+
