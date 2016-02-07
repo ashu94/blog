@@ -1,1 +1,2 @@
-static blog
+#static blog
+testing phase now
